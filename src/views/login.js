@@ -24,15 +24,15 @@ class Login extends React.Component {
         return (
             <div className="container">
                 <div className="row">
-                    <div className="col-md-6" style={{ position: 'relative', left: '300px' }}>
+                    <div className="col-sm-6" style={{ position: 'relative', left: '300px' }}>
                         <div className="bs-docs-section">
                             <Card>
                                 <CenteredDiv>
-                                    <img src={AccountIcon} className="max-width-30" />
+                                    <img src={AccountIcon} alt="Acesse sua conta" className="max-width-170" />
                                     <h3>Acesse sua conta</h3>
                                 </CenteredDiv>
                                 <div className="row  mb-lg-3">
-                                    <div className="col-lg-12">
+                                    <div className="col-sm-12">
                                         <div className="bs-component">
                                             <fieldset>
                                                 <FormGroup label="Email: *" labelFor="email">
@@ -60,7 +60,7 @@ class Login extends React.Component {
                                 </div>
                             </Card>
                             <CenteredDiv>
-                                <p>Não possui uma conta de acesso? <a href="cadastro" className="text-primary">Cadastre-se</a></p>
+                                <p>Não possui uma conta no sistema? <a href="#/cadastro" className="text-primary">Cadastre-se</a></p>
                             </CenteredDiv>
                         </div>
                     </div>
