@@ -10,6 +10,23 @@ label {
     max-width: 170px;
 }
 
+.navbar-primary {
+    background-color: #325D88 !important;
+}
+
+.navbar-primary span, a {
+    color: white;
+}
+
+.navbar-primary span:hover, a:hover {
+    color: white;
+    font-weight: bold;
+}
+
+.card-text-big {
+    font-size: 2rem;
+}
+
 pre {
     background: #f7f7f9
 }

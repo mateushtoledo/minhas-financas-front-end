@@ -1,5 +1,8 @@
 import React from 'react'
+import {withRouter} from 'react-router-dom'
+
 import Card from '../components/card'
+import GuestNavbar from '../components/guest-navbar'
 import FormGroup from '../components/form-group'
 import CenteredDiv from '../components/centered-div'
 import AccountIcon from '../img/account.png'
@@ -18,7 +21,8 @@ class UserRegistration extends React.Component {
 
     render() {
         return (
-            <div className="container">
+            <>
+                <GuestNavbar />
                 <Card>
                     <CenteredDiv>
                         <img src={AccountIcon} alt="Crie sua conta" className="max-width-170" style={{ maxWidth: "170px" }} />
@@ -89,9 +93,9 @@ class UserRegistration extends React.Component {
                 <CenteredDiv>
                     <p>Já possui uma conta no sistema? <a href="#/login" className="text-primary">Acesse sua conta</a></p>
                 </CenteredDiv>
-            </div>
+            </>
         )
     }
 }
 
-export default UserRegistration;
+export default withRouter(UserRegistration);
