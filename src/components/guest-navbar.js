@@ -3,7 +3,7 @@ import {withRouter} from 'react-router-dom'
 import NavItem from './nav-item'
 
 
-function GuestNavbar() {
+function GuestNavbar(props) {
     return (
         <div className="navbar navbar-expand-lg fixed-top navbar-primary bg-primary">
             <div className="container">
@@ -15,8 +15,8 @@ function GuestNavbar() {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarResponsive">
                     <ul className="navbar-nav">
-                        <NavItem href="#/cadastro" label="Criar conta" />
-                        <NavItem href="#/login" label="Login" />
+                        <NavItem href="#/cadastro" label="Criar conta" active={props.activeItem === "register"} />
+                        <NavItem href="#/login" label="Login" active={props.activeItem === "login"} />
                     </ul>
                 </div>
             </div>

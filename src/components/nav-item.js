@@ -1,9 +1,15 @@
 import React from 'react'
 
 function NavItem(props) {
+
+    let cssClass = "nav-link";
+    if (props.active) {
+        cssClass += " active";
+    }
+
     return (
         <li className="nav-item">
-            <a className="nav-link" href={props.href}>
+            <a className={cssClass} href={props.href}>
                 {props.label}
             </a>
         </li>

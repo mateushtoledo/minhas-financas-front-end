@@ -1,0 +1,38 @@
+body {
+    margin-top: 100px;
+    color: #284a6c;
+}
+
+label {
+    font-weight: bold;
+}
+
+a {
+    font-weight: bold;
+}
+
+.max-width-170 {
+    max-width: 170px;
+}
+
+.navbar-primary {
+    background-color: #325D88 !important;
+}
+
+.navbar-primary span, a {
+    color: white;
+}
+
+.navbar-primary span:hover, a:hover {
+    color: white;
+    font-weight: bold;
+}
+
+.nav-item .active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.card-text-big {
+    font-size: 2rem;
+}

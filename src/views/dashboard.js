@@ -12,11 +12,11 @@ class Dashboard extends React.Component {
     render() {
         return (
             <>
-                <UserNavbar />
+                <UserNavbar activeItem="dashboard" />
                 <h2>Dashboard</h2>
                 <hr />
                 <div className="row text-center">
-                    <div className="col-lg-4">
+                    <div className="col-md-4">
                         <div className="card border-success mb-3">
                             <div className="card-header bg-success text-light">
                                 <h4 className="card-title">Suas receitas</h4>
@@ -28,7 +28,7 @@ class Dashboard extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <div className="col-lg-4">
+                    <div className="col-md-4">
                         <div className="card border-danger mb-3">
                             <div className="card-header bg-danger text-light">
                                 <h4 className="card-title">Suas despesas</h4>
@@ -40,10 +40,10 @@ class Dashboard extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <div className="col-lg-4">
+                    <div className="col-md-4">
                         <div className="card border-dark mb-3">
                             <div className="card-header bg-light">
-                                <h4 className="card-title">Seu resultado financeiro</h4>
+                                <h4 className="card-title">Seu resultado</h4>
                             </div>
                             <div className="card-body">
                                 <p className="card-text-big">
