@@ -15,7 +15,7 @@ a {
     max-width: 170px;
 }
 
-.navbar-primary {
+.navbar-primary, .bg-primary {
     background-color: #325D88 !important;
 }
 

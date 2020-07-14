@@ -1,0 +1,7 @@
+#floating-add-button {
+    border: none;
+
+    right: 3%;
+    bottom: 3%;
+    position: fixed;
+}
