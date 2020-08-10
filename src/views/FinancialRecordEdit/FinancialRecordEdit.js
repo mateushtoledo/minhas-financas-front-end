@@ -52,7 +52,8 @@ function FinancialRecordEdit(props) {
         }
     };
 
-    const loadRecord = () => {
+    // Is equal to componentDidMount
+    useEffect(function() {
         const recordId = props.match.params.id;
         setId(recordId);
 
@@ -69,15 +70,7 @@ function FinancialRecordEdit(props) {
                 console.error(error.response);
                 validateErrorResponse(error.response);
             });
-    };
-
-    // Run after component loading
-    useEffect(() => {
-        if (!props.authenticated) {
-            props.history.push("/login");
-        }
-        loadRecord();
-    }, [props.authenticated]);
+    }, [props.match.params.id]);
 
     return (
         <>
@@ -107,10 +100,7 @@ function FinancialRecordEdit(props) {
     )
 }
 
-const mapStateToProps = store => ({
-    authenticated: store.authenticated,
-    details: store.details
-});
+const mapStateToProps = store => ({ details: store.details });
 
 const FinancialRecordEditConnected = connect(mapStateToProps)(FinancialRecordEdit);
 export default withRouter(FinancialRecordEditConnected);

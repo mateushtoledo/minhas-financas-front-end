@@ -12,10 +12,6 @@ function Dashboard(props) {
 
     // Run after component loading
     useEffect(() => {
-        if (!props.authenticated) {
-            props.history.push("/login");
-        }
-
         const headers = { headers: props.details.headers };
         Api.get("/financial-records/extracts", headers)
             .then(response => {
@@ -23,7 +19,7 @@ function Dashboard(props) {
             }).catch(error => {
                 validateUserLogin(error.response);
             });
-    }, [props.authenticated]);
+    }, []);
 
     const maskValue = (value) => {
         let prettyNumber = value.toFixed(2);
@@ -90,7 +86,6 @@ function Dashboard(props) {
 }
 
 const mapStateToProps = store => ({
-    authenticated: store.authenticated,
     details: store.details
 });
 

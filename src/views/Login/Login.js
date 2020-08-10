@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 
@@ -63,13 +63,6 @@ function Login(props) {
         });
     };
 
-    // Run after component loading
-    useEffect(() => {
-        if (props.authenticated) {
-            props.history.push("/dashboard");
-        }
-    }, [props.authenticated]);
-
     return (
         <>
             <GuestNavbar activeItem="login" />
@@ -107,10 +100,7 @@ function Login(props) {
     )
 }
 
-const mapStateToProps = store => ({
-    authenticated: store.authenticated,
-    details: store.details
-});
+const mapStateToProps = store => ({});
 
 const LoginConnected = connect(mapStateToProps)(Login);
 export default withRouter(LoginConnected);

@@ -65,11 +65,8 @@ function FinancialRecords(props) {
 
     // Run after component loading
     useEffect(() => {
-        if (!props.authenticated) {
-            props.history.push("/login");
-        }
         loadFinancialRegisters();
-    }, [props.authenticated]);
+    }, []);
 
     const renderData = (page) => {
         setFinancialRecords(page.items);
@@ -190,10 +187,7 @@ function FinancialRecords(props) {
     )
 }
 
-const mapStateToProps = store => ({
-    authenticated: store.authenticated,
-    details: store.details
-});
+const mapStateToProps = store => ({ details: store.details });
 
 const FinancialRecordsConnected = connect(mapStateToProps)(FinancialRecords);
 export default withRouter(FinancialRecordsConnected);

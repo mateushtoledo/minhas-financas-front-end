@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 
@@ -64,13 +64,6 @@ function FinancialRecordRegister(props) {
         }
     };
 
-    // Run after component loading
-    useEffect(() => {
-        if (!props.authenticated) {
-            props.history.push("/login");
-        }
-    }, [props.authenticated]);
-
     return (
         <>
             <UserNavbar />
@@ -99,10 +92,7 @@ function FinancialRecordRegister(props) {
     )
 }
 
-const mapStateToProps = store => ({
-    authenticated: store.authenticated,
-    details: store.details
-});
+const mapStateToProps = store => ({ details: store.details });
 
 const FinancialRecordRegisterConnected = connect(mapStateToProps)(FinancialRecordRegister);
 export default withRouter(FinancialRecordRegisterConnected);
