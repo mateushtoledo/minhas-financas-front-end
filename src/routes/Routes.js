@@ -1,4 +1,6 @@
 import React from 'react'
+import { Route, Switch, HashRouter, Redirect } from 'react-router-dom'
+import { withCookies } from 'react-cookie';
 
 import AuthenticatedRoute from './AuthenticatedRoute'
 import GuestRoute from './GuestRoute'
@@ -9,9 +11,6 @@ import FinancialRecords from '../views/FinancialRecords'
 import FinancialRecordRegister from '../views/FinancialRecordRegister'
 import FinancialRecordEdit from '../views/FinancialRecordEdit'
 
-// Destructuring: extracting some properties of 'react-router-dom' object
-import { Route, Switch, HashRouter, Redirect } from 'react-router-dom'
-
 function Routes() {
     return (
         <HashRouter>
@@ -19,15 +18,15 @@ function Routes() {
                 <Route exact path="/">
                     <Redirect to="/login" />
                 </Route>
-                <GuestRoute exact path="/login" component={Login} />
-                <GuestRoute exact path="/cadastro" component={UserRegistration} />
-                <AuthenticatedRoute exact path="/dashboard" component={Dashboard} />
-                <AuthenticatedRoute exact path="/registros-financeiros" component={FinancialRecords} />
-                <AuthenticatedRoute exact path="/registros-financeiros/cadastro" component={FinancialRecordRegister} />
-                <AuthenticatedRoute exact path="/registros-financeiros/editar/:id" component={FinancialRecordEdit} />
+                <GuestRoute exact path="/login" render={() => <Login cookies={this.props.cookies} />} />
+                <GuestRoute exact path="/cadastro" render={() => <UserRegistration cookies={this.props.cookies} />} />
+                <AuthenticatedRoute exact path="/dashboard"render={() => <Dashboard cookies={this.props.cookies} />} />
+                <AuthenticatedRoute exact path="/registros-financeiros" render={() => <FinancialRecords cookies={this.props.cookies} />} />
+                <AuthenticatedRoute exact path="/registros-financeiros/cadastro" render={() => <FinancialRecordRegister cookies={this.props.cookies} />} />
+                <AuthenticatedRoute exact path="/registros-financeiros/editar/:id" render={() => <FinancialRecordEdit cookies={this.props.cookies} />} />
             </Switch>
         </HashRouter>
     )
 }
 
-export default Routes;
+export default withCookies(Routes);
